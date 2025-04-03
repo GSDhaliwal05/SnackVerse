@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Lays Chips",
+    "category": "Chips",
+    "price": 1.00,
+    "image": "assets/images/lays-original.jpg",
+    "description": "Classic Lays potato chips.",
+    "variations": [
+      { "name": "Original", "image": "assets/images/lays-original.jpg" },
+      { "name": "BBQ", "image": "assets/images/lays-bbq.jpg" },
+      { "name": "Sour Cream", "image": "assets/images/lays-sour-cream.jpg" },
+      { "name": "Spicy", "image": "assets/images/lays-spicy.jpg" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Cola Soda",
+    "category": "Drinks",
+    "price": 1.00,
+    "image": "assets/images/cola.jpg",
+    "description": "Refreshing cola soda.",
+    "variations": [
+      { "name": "Cola", "image": "assets/images/cola.jpg" },
+      { "name": "Orange", "image": "assets/images/orange-soda.jpg" },
+      { "name": "Lemon", "image": "assets/images/lemon-soda.jpg" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Gummy Candy",
+    "category": "Candy",
+    "price": 1.00,
+    "image": "assets/images/gummy-bears.jpg",
+    "description": "Soft and chewy gummy candy.",
+    "variations": [
+      { "name": "Gummy Bears", "image": "assets/images/gummy-bears.jpg" },
+      { "name": "Chocolate Bites", "image": "assets/images/chocolate-bites.jpg" },
+      { "name": "Sour Straws", "image": "assets/images/sour-straws.jpg" }
+    ]
+  }
+]

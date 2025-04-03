@@ -1,0 +1,63 @@
+/* Add your custom styles here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.snack-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+}
+
+.snack-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.add-to-cart-btn,
+.view-details-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.add-to-cart-btn:hover,
+.view-details-btn:hover {
+    background-color: #555;
+}
+
+#snack-variations button {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #333;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+#snack-variations button.selected {
+    background-color: #333;
+    color: #fff;
+}
