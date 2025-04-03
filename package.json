@@ -1,0 +1,11 @@
+{
+  "name": "snackverse",
+  "version": "1.0.0",
+  "description": "A static e-commerce website for snacks",
+  "main": "index.html",
+  "scripts": {
+    "build": "mkdir -p docs && cp index.html product.html cart.html checkout.html confirmation.html docs/ && cp -r assets docs/ && cp -r data docs/"
+  },
+  "author": "GSDhaliwal05",
+  "license": "MIT"
+}
