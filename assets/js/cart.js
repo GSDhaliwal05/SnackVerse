@@ -1,43 +1,39 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const cartItems = document.getElementById('cart-items');
-    const totalPrice = document.getElementById('total-price');
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items');
+    const totalPriceElement = document.getElementById('total-price');
     const checkoutButton = document.getElementById('checkout-button');
-    
-    if (cartItems) {
-        const cart = getCart();
-        cartItems.innerHTML = '';
-        let total = 0;
-        cart.forEach(item => {
-            const productElement = document.createElement('div');
-            productElement.classList.add('snack-card');
-            productElement.innerHTML = `
-                <img src="${item.image}" class="snack-image" alt="${item.name}">
-                <h2 class="snack-name">${item.name}</h2>
-                <p class="snack-price">$${item.price.toFixed(2)}</p>
-                <p>Variation: ${item.variation}</p>
-                <p>Quantity: ${item.quantity}</p>
-                <button onclick="removeFromCart(${item.id}, '${item.variation}')">Remove</button>
+
+    if (cartItems.length === 0) {
+        alert('Your cart is empty. Please add items to the cart before proceeding.');
+        window.location.href = 'index.html';
+    }
+
+    function renderCartItems() {
+        cartItemsContainer.innerHTML = '';
+        cartItems.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.className = 'cart-item';
+            itemElement.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3 class="cart-item-name">${item.name}</h3>
+                    <p class="cart-item-price">$${item.price.toFixed(2)}</p>
+                    <p class="cart-item-quantity">Quantity: ${item.quantity}</p>
+                </div>
             `;
-            cartItems.appendChild(productElement);
-            total += item.price * item.quantity;
+            cartItemsContainer.appendChild(itemElement);
         });
-        totalPrice.innerHTML = `Total: $${total.toFixed(2)}`;
     }
 
-    if (checkoutButton) {
-        checkoutButton.addEventListener('click', () => {
-            window.location.href = 'checkout.html';
+    function calculateSubtotal() {
+        let subtotal = 0;
+        cartItems.forEach(item => {
+            subtotal += item.price * item.quantity;
         });
+        totalPriceElement.innerText = `Subtotal: $${subtotal.toFixed(2)}`;
     }
+
+    renderCartItems();
+    calculateSubtotal();
 });
-
-function removeFromCart(productId, variation) {
-    let cart = getCart();
-    cart = cart.filter(item => !(item.id == productId && item.variation == variation));
-    localStorage.setItem('cart', JSON.stringify(cart));
-    window.location.reload();
-}
-
-function getCart() {
-    return JSON.parse(localStorage.getItem('cart')) || [];
-}

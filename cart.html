@@ -24,6 +24,27 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
             });
+
+        // Prevent access to cart if no items
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cartItems.length === 0) {
+                alert('Your cart is empty. Please add items to the cart before proceeding.');
+                window.location.href = 'index.html';
+            }
+        });
+
+        // Calculate and display subtotal
+        function calculateSubtotal() {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            let subtotal = 0;
+            cartItems.forEach(item => {
+                subtotal += item.price * item.quantity;
+            });
+            document.getElementById('total-price').innerText = `Subtotal: $${subtotal.toFixed(2)}`;
+        }
+
+        calculateSubtotal();
     </script>
 </body>
 </html>
