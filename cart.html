@@ -8,13 +8,22 @@
     <script defer src="assets/js/cart.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Your Shopping Cart</h1>
-    </header>
+    <!-- Include common header -->
+    <div id="header-placeholder"></div>
+
     <main>
         <div id="cart-items"></div>
         <p id="total-price"></p>
         <button id="checkout-button">Proceed to Checkout</button>
     </main>
+
+    <script>
+        // Load the common header
+        fetch('assets/partials/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 </html>

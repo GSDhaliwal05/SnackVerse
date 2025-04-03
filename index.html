@@ -8,23 +8,21 @@
     <script defer src="assets/js/main.js"></script>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="assets/images/logo.png" alt="SnackVerse Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Snacks</a></li>
-                <li><a href="#">Drinks</a></li>
-                <li><a href="#">Candy</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Include common header -->
+    <div id="header-placeholder"></div>
+
     <main>
         <h2>Delicious Snacks Just For You:</h2>
         <div id="snack-list" class="carousel"></div>
     </main>
+
+    <script>
+        // Load the common header
+        fetch('assets/partials/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 </html>

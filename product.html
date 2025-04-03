@@ -8,9 +8,9 @@
     <script defer src="assets/js/main.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Snack Details</h1>
-    </header>
+    <!-- Include common header -->
+    <div id="header-placeholder"></div>
+
     <main>
         <div id="product-details">
             <h2 id="snack-title"></h2>
@@ -21,5 +21,14 @@
             <button id="add-to-cart-btn">Add to Cart</button>
         </div>
     </main>
+
+    <script>
+        // Load the common header
+        fetch('assets/partials/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 </html>

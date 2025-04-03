@@ -45,6 +45,10 @@ nav ul li a:hover {
     color: #007BFF;
 }
 
+.cart img {
+    height: 30px;
+}
+
 /* Main content styles */
 main {
     padding: 2rem;
