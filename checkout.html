@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/checkout.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Checkout</h1>
+    </header>
+    <main>
+        <form id="order-form">
+            <label for="customer-name">Full Name:</label>
+            <input type="text" id="customer-name" name="name" required>
+            <label for="customer-phone">Phone Number:</label>
+            <input type="tel" id="customer-phone" name="phone" required>
+            <label for="customer-address">Shipping Address:</label>
+            <textarea id="customer-address" name="address" required></textarea>
+            <button type="submit">Place Order</button>
+        </form>
+    </main>
+</body>
+</html>
